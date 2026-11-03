@@ -177,7 +177,7 @@ section{padding-block:clamp(64px,9vw,128px)}
 
 /* Locations */
 .locs{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.loc{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:clamp(28px,4vw,44px);display:flex;flex-direction:column;gap:22px;min-width:0}
+.loc{scroll-margin-top:96px;background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:clamp(28px,4vw,44px);display:flex;flex-direction:column;gap:22px;min-width:0}
 .loc h3{font-size:var(--step-2)}
 .loc .clinic{font-weight:600}
 .loc address{font-style:normal;color:var(--muted);font-size:.95rem}
@@ -316,7 +316,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
         </figure>
       </div>
       <div class="locs">
-        <div class="loc">
+        <div class="loc" id="vitoria">
           <div><p class="eyebrow">Vitória</p></div>
           <h3>Santa Lúcia</h3>
           <div>
@@ -332,7 +332,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
             <a class="btn btn-line" href="https://maps.app.goo.gl/sifHPpELaLk7J4MJA" target="_blank" rel="noopener">Ver no mapa</a>
           </div>
         </div>
-        <div class="loc">
+        <div class="loc" id="vila-velha">
           <div><p class="eyebrow">Vila Velha</p></div>
           <h3>Praia de Itaparica</h3>
           <div>
