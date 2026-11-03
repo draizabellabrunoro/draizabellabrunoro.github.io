@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../logo.png">
+<title>Dra. Izabella Brunoro</title>
+<meta name="description" content="Dra. Izabella Brunoro, cirurgiã-dentista em Vitória e Vila Velha (ES). Conheça o site e agende sua consulta. CRO-ES 12337.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:url" content="https://draizabellabrunoro.github.io/cartao/">
+<meta property="og:title" content="Dra. Izabella Brunoro · Cirurgiã-dentista">
+<meta property="og:description" content="Conheça o site e agende sua consulta em Vitória ou Vila Velha (ES).">
+<meta property="og:image" content="https://draizabellabrunoro.github.io/og.jpg">
+<link rel="canonical" href="https://draizabellabrunoro.github.io/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Manrope:wght@300;400;500;600&display=swap">
+<style>
+/* Página do cartão de visita (QR Code): foto em arco, nome, site e agendamento por consultório */
+:root{--porcelain:#f2efe7;--surface:#fbfaf6;--navy:#1f2e4a;--navy-soft:#4a628a;--champagne:#b8a07a;--line:#e2e0da;--muted:#5e6676}
+*{box-sizing:border-box;margin:0}
+html{background:var(--porcelain)}
+body{min-height:100vh;background:var(--porcelain);font-family:Manrope,system-ui,sans-serif;color:var(--navy);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.page{max-width:420px;margin:0 auto;padding:calc(28px + env(safe-area-inset-top,0px)) 24px calc(30px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;align-items:center}
+.mono{width:44px;height:44px;border:1px solid var(--champagne);border-radius:50%;display:grid;place-items:center;font-family:"Bodoni Moda",serif;font-size:17px;letter-spacing:.04em}
+.frame{margin-top:22px;width:212px;height:268px;border-radius:106px 106px 4px 4px;overflow:hidden;outline:1px solid var(--champagne);outline-offset:7px}
+.frame img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 12%}
+.eyebrow{margin-top:30px;font-size:10.5px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--champagne);text-align:center}
+h1{margin-top:10px;font-family:"Bodoni Moda",serif;font-weight:400;font-size:38px;line-height:1.02;text-align:center;letter-spacing:-.01em}
+h1 em{font-style:italic;color:var(--navy-soft)}
+.role{margin-top:12px;font-size:13px;color:var(--muted);text-align:center;line-height:1.55}
+.cta{margin-top:26px;width:100%;min-height:58px;background:var(--navy);color:#f6f5f2;border-radius:2px;display:flex;align-items:center;justify-content:space-between;padding:0 22px;font-size:14.5px;font-weight:500;letter-spacing:.02em;transition:background .2s}
+.cta:hover{background:#2a3d5f}
+.cta svg{width:18px;height:18px;flex:none}
+.sep{margin-top:28px;width:100%;display:flex;align-items:center;gap:14px;font-size:10.5px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+.sep::before,.sep::after{content:"";flex:1;height:1px;background:var(--line)}
+.locs{margin-top:16px;width:100%;display:flex;flex-direction:column;gap:10px}
+.loc{background:var(--surface);border:1px solid var(--line);border-radius:2px;padding:16px 18px 16px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;transition:border-color .2s}
+.loc:hover{border-color:var(--champagne)}
+.city,.meta{display:block}
+.city{font-family:"Bodoni Moda",serif;font-size:23px;line-height:1.1}
+.meta{margin-top:5px;font-size:12px;color:var(--muted);line-height:1.5}
+.meta b{font-weight:600;color:var(--navy)}
+.arrow{width:38px;height:38px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;flex:none}
+.arrow svg{width:15px;height:15px}
+.foot{margin-top:26px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="seta" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol></svg>
+<main class="page">
+  <div class="mono" aria-hidden="true">IB</div>
+  <div class="frame"><img src="../hero.jpg" alt="Dra. Izabella Brunoro sorrindo, de blazer marrom, ao lado de uma cortina clara" width="927" height="1402"></div>
+  <p class="eyebrow">Odontologia · Grande Vitória</p>
+  <h1>Izabella <em>Brunoro</em></h1>
+  <p class="role">Cirurgiã-dentista · CRO-ES 12337<br>Ortodontia e ortopedia funcional dos maxilares</p>
+
+  <a class="cta" href="../">Conhecer meu site<svg aria-hidden="true"><use href="#seta"/></svg></a>
+
+  <p class="sep">Agendar consulta</p>
+  <div class="locs">
+    <a class="loc" href="../#vitoria">
+      <span><span class="city">Vitória</span><span class="meta">Santa Lúcia · <b>Quintas, 9h às 18h</b></span></span>
+      <span class="arrow" aria-hidden="true"><svg><use href="#seta"/></svg></span>
+    </a>
+    <a class="loc" href="../#vila-velha">
+      <span><span class="city">Vila Velha</span><span class="meta">Praia de Itaparica · <b>Seg. a qua. e sex.</b></span></span>
+      <span class="arrow" aria-hidden="true"><svg><use href="#seta"/></svg></span>
+    </a>
+  </div>
+  <p class="foot">draizabellabrunoro.github.io</p>
+</main>
+</body>
+</html>
