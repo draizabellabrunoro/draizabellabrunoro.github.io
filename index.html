@@ -29,7 +29,10 @@
       "@type": "Dentist",
       "name": "Dra. Izabella Brunoro · Zucoloto Odontologia",
       "telephone": "+55 27 98841-4358",
-      "address": {"@type": "PostalAddress", "streetAddress": "R. das Palmeiras, 685, Ed. Contemporâneo Empresarial, sala 1511", "addressLocality": "Vitória", "addressRegion": "ES", "postalCode": "29056-210", "addressCountry": "BR"}
+      "address": {"@type": "PostalAddress", "streetAddress": "R. das Palmeiras, 685, Ed. Contemporâneo Empresarial, sala 1511", "addressLocality": "Vitória", "addressRegion": "ES", "postalCode": "29056-210", "addressCountry": "BR"},
+      "openingHoursSpecification": [
+        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday", "opens": "09:00", "closes": "18:00"}
+      ]
     },
     {
       "@type": "Dentist",
@@ -320,7 +323,9 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
             <p class="clinic">Zucoloto Odontologia</p>
             <address>R. das Palmeiras, 685 — Ed. Contemporâneo Empresarial, 15º andar, sala 1511<br>Santa Lúcia, Vitória – ES, 29056-210</address>
           </div>
-          <p class="note">Atendimento somente com horário marcado.</p>
+          <dl class="hours">
+            <dt>Quinta</dt><dd>9h – 18h</dd>
+          </dl>
           <p class="phone">WhatsApp (27) 98841-4358</p>
           <div class="actions">
             <a class="btn btn-solid" href="https://wa.me/5527988414358?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20com%20a%20Dra.%20Izabella%20Brunoro" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#wa-icon"/></svg>Agendar pelo WhatsApp</a>
