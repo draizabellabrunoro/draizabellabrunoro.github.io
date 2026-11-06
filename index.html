@@ -373,4 +373,23 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
   </div>
 </footer>
 
+<script>
+/* Origem do contato (05/11/2026): quem chega pelo Instagram (link da bio com ?origem=instagram,
+   link de guia com ?origem=guia, ou vindo de instagram.com) manda no WhatsApp uma mensagem que já diz
+   de onde veio. Assim a secretária e a Dra. sabem quais consultas nasceram do Instagram. */
+(function(){
+  var q = new URLSearchParams(location.search);
+  var origem = (q.get("origem") || q.get("utm_source") || "").toLowerCase();
+  var ref = document.referrer || "";
+  if(!origem && /instagram\.com/i.test(ref)) origem = "instagram";
+  if(origem !== "instagram" && origem !== "guia") return;
+  var texto = origem === "guia"
+    ? "Olá, tudo bem? Recebi o guia da Dra. Izabella Brunoro pelo Instagram e gostaria de agendar um horário."
+    : "Olá, tudo bem? Vi a Dra. Izabella Brunoro no Instagram e gostaria de agendar um horário.";
+  document.querySelectorAll('a[href*="wa.me/"]').forEach(function(a){
+    try { var u = new URL(a.href); u.searchParams.set("text", texto); a.href = u.toString(); } catch(e){}
+  });
+})();
+</script>
+
 </html>
