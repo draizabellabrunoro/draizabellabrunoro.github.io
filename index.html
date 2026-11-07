@@ -59,9 +59,8 @@
   --navy-soft:#4a628a;
   --sky:#7ab2d3;
   --champagne:#b8a07a;
-  --champagne-texto:#7a6640;
   --line:#e2e0da;
-  --muted:#474f5e;
+  --muted:#5e6676;
   --bg:var(--porcelain);
   --fg:var(--navy);
   --on-dark:#f6f5f2;
@@ -77,21 +76,20 @@
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --bg:#121926;--surface:#18213200;--fg:#ecebe6;--navy:#ecebe6;--navy-soft:#b9c6db;--sky:#8fa9cc;
-  --champagne:#cdb68e;--champagne-texto:#cdb68e;--line:#2a3549;--muted:#b3bac7;--on-dark:#ecebe6;--dark-band:#0c121c;--surface:#182132;color-scheme:dark}}
+  --champagne:#cdb68e;--line:#2a3549;--muted:#a3abba;--on-dark:#ecebe6;--dark-band:#0c121c;--surface:#182132;color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#121926;--fg:#ecebe6;--navy:#ecebe6;--navy-soft:#b9c6db;--sky:#8fa9cc;
-  --champagne:#cdb68e;--champagne-texto:#cdb68e;--line:#2a3549;--muted:#b3bac7;--on-dark:#ecebe6;--dark-band:#0c121c;--surface:#182132;color-scheme:dark}
+  --champagne:#cdb68e;--line:#2a3549;--muted:#a3abba;--on-dark:#ecebe6;--dark-band:#0c121c;--surface:#182132;color-scheme:dark}
 
 *{box-sizing:border-box}
-html{scroll-padding-top:110px}
+html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
 body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:var(--step-0);line-height:1.65;font-weight:400;-webkit-font-smoothing:antialiased}
 a{color:inherit}
-a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--navy-soft);outline-offset:3px;border-radius:6px}
-.band a:focus-visible{outline-color:var(--on-dark)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--champagne);outline-offset:3px}
 .wrap{max-width:1180px;margin-inline:auto;padding-inline:var(--gutter)}
 h1,h2,h3{font-family:var(--display);font-weight:400;text-wrap:balance;margin:0;letter-spacing:-.01em;line-height:1.08}
-.eyebrow{font-size:var(--step--1);letter-spacing:.22em;text-transform:uppercase;color:var(--champagne-texto);font-weight:600;margin:0}
+.eyebrow{font-size:var(--step--1);letter-spacing:.22em;text-transform:uppercase;color:var(--champagne);font-weight:600;margin:0}
 p{margin:0}
 
 /* Header */
@@ -100,13 +98,10 @@ header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;backgroun
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
 .mono{width:48px;height:48px;border:1px solid var(--sky);border-radius:50%;display:grid;place-items:center;background:#f2efe7;flex:none}
 .mono img{width:auto;height:34px;display:block;margin-left:2px}
-.brand b{font-family:var(--display);font-weight:500;font-size:1.05rem;letter-spacing:.08em;text-transform:uppercase;display:block;line-height:1.1;white-space:nowrap}
-.brand small{display:block;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
-.brand{min-width:0}
-@media (min-width:861px){.brand>span:last-child{display:flex;align-items:baseline;gap:12px}.brand small{font-size:.72rem}}
-@media (max-width:440px){.brand b{font-size:.92rem;letter-spacing:.05em}.brand small{font-size:.62rem;letter-spacing:.1em}.mono{width:40px;height:40px}.mono img{height:28px}}
+.brand b{font-family:var(--display);font-weight:500;font-size:1.05rem;letter-spacing:.08em;text-transform:uppercase;display:block;line-height:1.1}
+.brand small{display:block;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 nav.links{display:flex;gap:28px;font-size:.88rem}
-nav.links a{text-decoration:none;color:var(--muted);white-space:nowrap}
+nav.links a{text-decoration:none;color:var(--muted)}
 nav.links a:hover{color:var(--fg)}
 .btn{display:inline-flex;align-items:center;gap:10px;justify-content:center;padding:14px 26px;border-radius:999px;font-weight:600;font-size:.9rem;letter-spacing:.02em;text-decoration:none;transition:background .25s,color .25s,border-color .25s;border:1px solid transparent;white-space:nowrap}
 .btn-solid{background:var(--navy);color:var(--bg)}
@@ -119,8 +114,7 @@ nav.links a:hover{color:var(--fg)}
 @media (max-width:440px){.top .btn span{display:none}.top .btn{padding:10px 12px}}
 
 /* Hero */
-.hero{padding-block:clamp(28px,4vw,56px)}
-@media (min-width:861px){.hero{min-height:calc(100svh - 85px);display:flex;align-items:center}.hero>.wrap{width:100%}.hero .frame{max-height:calc(100svh - 85px - 112px);width:auto;aspect-ratio:4/5;justify-self:end}}
+.hero{padding-block:clamp(40px,7vw,96px) clamp(56px,8vw,112px)}
 .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,6vw,88px);align-items:center}
 .hero-copy{display:flex;flex-direction:column;gap:28px;min-width:0}
 .hero h1{font-size:var(--step-3)}
@@ -129,7 +123,7 @@ nav.links a:hover{color:var(--fg)}
 .ctas{display:flex;flex-wrap:wrap;gap:12px}
 .creds{display:flex;flex-wrap:wrap;gap:10px 28px;padding-top:24px;border-top:1px solid var(--line);font-size:.86rem;color:var(--muted)}
 .creds span strong{color:var(--fg);font-weight:600}
-@media (max-width:860px){.hero .wrap{grid-template-columns:1fr;gap:22px}.hero .frame{order:-1;max-width:420px;max-height:34svh;aspect-ratio:auto;height:34svh;border-radius:160px 160px 4px 4px}.hero-copy{gap:18px}.hero .lede{font-size:1.08rem}}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr}.hero .frame{order:-1;max-width:420px}}
 
 /* Photo frames */
 .frame{position:relative;width:100%;aspect-ratio:4/5;max-width:100%;border-radius:220px 220px 4px 4px;overflow:hidden;background:linear-gradient(160deg,#dfe6f0,#c9d3e2 60%,#b7c4d8)}
@@ -142,9 +136,6 @@ nav.links a:hover{color:var(--fg)}
 section{padding-block:clamp(64px,9vw,128px)}
 .sec-head{display:flex;flex-direction:column;gap:14px;max-width:640px;margin-bottom:clamp(36px,5vw,64px)}
 .sec-head h2{font-size:var(--step-2)}
-.icone-sec{width:64px;height:64px;color:var(--sky);flex:none}
-.icone-sec path,.icone-sec circle,.icone-sec rect{fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
-.closing-titulo{display:flex;align-items:center;gap:20px}
 
 /* About */
 .about{background:var(--surface);border-block:1px solid var(--line)}
@@ -171,7 +162,7 @@ section{padding-block:clamp(64px,9vw,128px)}
 .tx article:not(:nth-child(3n+1)){padding-left:28px;border-left:1px solid var(--line)}
 .tx h3{font-size:1.5rem}
 .tx p{color:var(--muted);font-size:.95rem}
-.tx .kind{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--champagne-texto);font-weight:600}
+.tx .kind{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--champagne);font-weight:600}
 @media (max-width:860px){.tx{grid-template-columns:1fr 1fr}.tx article:not(:nth-child(3n+1)){padding-left:0;border-left:0}.tx article:nth-child(2n){padding-left:24px;border-left:1px solid var(--line)}}
 @media (max-width:540px){.tx{grid-template-columns:1fr}.tx article:nth-child(2n){padding-left:0;border-left:0}.tx article{padding-right:0}}
 
@@ -187,7 +178,7 @@ section{padding-block:clamp(64px,9vw,128px)}
 /* Locations */
 .locs{display:grid;grid-template-columns:1fr 1fr;gap:24px}
 .loc{scroll-margin-top:96px;background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:clamp(28px,4vw,44px);display:flex;flex-direction:column;gap:22px;min-width:0}
-.loc h3{font-size:clamp(1.45rem,1.3rem + .6vw,1.8rem)}
+.loc h3{font-size:var(--step-2)}
 .loc .clinic{font-weight:600}
 .loc address{font-style:normal;color:var(--muted);font-size:.95rem}
 .hours{display:grid;grid-template-columns:auto 1fr;gap:6px 24px;font-size:.92rem;font-variant-numeric:tabular-nums;margin:0}
@@ -222,15 +213,14 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 .nota-grande span:last-child{opacity:.85}
 .nota-link{flex-basis:100%;margin:-22px 0 0}
 /* Faixa de avaliações (06/11/2026): trechos sem nome, só sobre o atendimento, sem resultado clínico (Código de Ética, art. 44, V e VI) */
-.faixa-avaliacoes{flex-basis:100%;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:thin;margin:8px 0 4px;padding-bottom:10px;overscroll-behavior-x:contain}
-.faixa-dica{flex-basis:100%;margin:-18px 0 0;font-size:.82rem;color:var(--muted)}
-.faixa-trilho{display:flex;gap:20px;padding:0;margin:0;list-style:none;flex:none}
+.faixa-avaliacoes{flex-basis:100%;display:flex;overflow:hidden;margin:8px 0 4px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.faixa-trilho{display:flex;gap:20px;padding:0 20px 0 0;margin:0;list-style:none;flex:none;animation:faixa 70s linear infinite}
 .faixa-avaliacoes:hover .faixa-trilho,.faixa-avaliacoes:focus-within .faixa-trilho{animation-play-state:paused}
-.faixa-trilho li{flex:none;scroll-snap-align:start;width:calc((min(1180px,100vw) - 2 * var(--gutter) - 40px) / 3);display:flex;flex-direction:column;gap:12px;padding:24px 24px 20px;background:var(--surface);border:1px solid var(--line);border-radius:4px}
+.faixa-trilho li{flex:none;width:min(340px,78vw);display:flex;flex-direction:column;gap:12px;padding:24px 24px 20px;background:var(--surface);border:1px solid var(--line);border-radius:4px}
 .faixa-trilho q{font-family:var(--display);font-style:italic;font-size:1.12rem;line-height:1.45;quotes:"“" "”"}
 .faixa-trilho small{margin-top:auto;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
 @keyframes faixa{to{transform:translateX(-100%)}}
-
+@media (prefers-reduced-motion:reduce){.faixa-avaliacoes{overflow-x:auto;-webkit-mask-image:none;mask-image:none}.faixa-trilho[aria-hidden]{display:none}}
 .nota-link a{color:inherit;text-underline-offset:4px}
 /* Perguntas frequentes (06/11/2026) */
 #duvidas .faq{max-width:820px;margin-top:clamp(28px,4vw,48px);border-top:1px solid var(--line)}
@@ -244,11 +234,10 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 .agendar-fixo{display:none}
 @media (max-width:760px){
   .agendar-fixo{display:flex;position:fixed;left:16px;right:16px;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:20;justify-content:center;align-items:center;gap:10px;
-    padding:15px 20px;border-radius:999px;background:var(--navy);color:var(--bg);font-weight:600;text-decoration:none;box-shadow:0 10px 30px rgba(15,25,45,.25);border:1px solid transparent;font-size:.9rem;letter-spacing:.02em;transition:opacity .25s}
+    padding:15px 20px;border-radius:999px;background:var(--navy);color:var(--bg);font-weight:600;text-decoration:none;box-shadow:0 10px 30px rgba(15,25,45,.25);border:1px solid color-mix(in srgb,var(--champagne) 70%,transparent);transition:opacity .25s}
   .agendar-fixo.some{opacity:0;pointer-events:none}
   footer{padding-bottom:88px}
 }
-@media (max-width:860px){.faixa-trilho li{width:min(340px,80vw)}}
 </style>
 
 <header class="top">
@@ -353,7 +342,6 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
   <section id="duvidas">
     <div class="wrap">
       <div class="sec-head">
-        <svg class="icone-sec" viewBox="0 0 64 64" aria-hidden="true"><path d="M10 14h36a6 6 0 0 1 6 6v18a6 6 0 0 1-6 6H28l-10 8v-8h-8a6 6 0 0 1-6-6V20a6 6 0 0 1 6-6z"/><path d="M24 25a5 5 0 1 1 7 4.6c-1.6.7-3 1.8-3 3.6v.8"/><circle cx="28" cy="38.5" r=".6"/></svg>
         <p class="eyebrow">Dúvidas frequentes</p>
         <h2>O que os pacientes mais me perguntam.</h2>
       </div>
@@ -431,11 +419,9 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
       <p class="nota-link"><a href="https://g.page/r/CZ8vb_q18XzHEAI" target="_blank" rel="noopener">Ver as avaliações no Google</a></p>
       <div class="faixa-avaliacoes" aria-label="Trechos de avaliações no Google">
         <ul class="faixa-trilho"><li><span class="estrelas" aria-hidden="true">★★★★★</span><q>Ela tem uma metodologia muito clara e estruturada para orientar o paciente. Me senti acolhida, segura e com muita clareza durante todo o atendimento.</q><small>Avaliação no Google</small></li><li><span class="estrelas" aria-hidden="true">★★★★★</span><q>Destaque para a paciência ao explicar um diagnóstico, cuidado humano e o acolhimento durante o procedimento que faz toda a diferença.</q><small>Avaliação no Google</small></li><li><span class="estrelas" aria-hidden="true">★★★★★</span><q>Orientação e paciência com crianças, minha filha de quatro anos adorou!</q><small>Avaliação no Google</small></li><li><span class="estrelas" aria-hidden="true">★★★★★</span><q>Atenciosa, didática, simpática e empática. Explicou tudo com clareza e deu ótimas dicas de higiene!</q><small>Avaliação no Google</small></li><li><span class="estrelas" aria-hidden="true">★★★★★</span><q>Mudou minha visão sobre ir a um consultório odontológico, foi um atendimento ímpar!</q><small>Avaliação no Google</small></li><li><span class="estrelas" aria-hidden="true">★★★★★</span><q>Tem uma mão muito leve e delicada, explica com muita atenção e indica o que é necessário para melhorar a saúde dental.</q><small>Avaliação no Google</small></li><li><span class="estrelas" aria-hidden="true">★★★★★</span><q>Cuidadosa, me deu muita atenção e foi super atenciosa ao me explicar o procedimento. Recomendo de olhos fechados!</q><small>Avaliação no Google</small></li><li><span class="estrelas" aria-hidden="true">★★★★★</span><q>Atendimento excelente, muito cuidadosa, explica todos os procedimentos, orienta na manutenção, transmite segurança.</q><small>Avaliação no Google</small></li><li><span class="estrelas" aria-hidden="true">★★★★★</span><q>Ela se esforça para garantir que os pacientes estejam bem informados sobre os procedimentos e os cuidados necessários após cada sessão.</q><small>Avaliação no Google</small></li><li><span class="estrelas" aria-hidden="true">★★★★★</span><q>Muito educada, esclarece todas as dúvidas e é pontual.</q><small>Avaliação no Google</small></li></ul>
-
+        <ul class="faixa-trilho" aria-hidden="true"><li><span class="estrelas" aria-hidden="true">★★★★★</span><q>Ela tem uma metodologia muito clara e estruturada para orientar o paciente. Me senti acolhida, segura e com muita clareza durante todo o atendimento.</q><small>Avaliação no Google</small></li><li><span class="estrelas" aria-hidden="true">★★★★★</span><q>Destaque para a paciência ao explicar um diagnóstico, cuidado humano e o acolhimento durante o procedimento que faz toda a diferença.</q><small>Avaliação no Google</small></li><li><span class="estrelas" aria-hidden="true">★★★★★</span><q>Orientação e paciência com crianças, minha filha de quatro anos adorou!</q><small>Avaliação no Google</small></li><li><span class="estrelas" aria-hidden="true">★★★★★</span><q>Atenciosa, didática, simpática e empática. Explicou tudo com clareza e deu ótimas dicas de higiene!</q><small>Avaliação no Google</small></li><li><span class="estrelas" aria-hidden="true">★★★★★</span><q>Mudou minha visão sobre ir a um consultório odontológico, foi um atendimento ímpar!</q><small>Avaliação no Google</small></li><li><span class="estrelas" aria-hidden="true">★★★★★</span><q>Tem uma mão muito leve e delicada, explica com muita atenção e indica o que é necessário para melhorar a saúde dental.</q><small>Avaliação no Google</small></li><li><span class="estrelas" aria-hidden="true">★★★★★</span><q>Cuidadosa, me deu muita atenção e foi super atenciosa ao me explicar o procedimento. Recomendo de olhos fechados!</q><small>Avaliação no Google</small></li><li><span class="estrelas" aria-hidden="true">★★★★★</span><q>Atendimento excelente, muito cuidadosa, explica todos os procedimentos, orienta na manutenção, transmite segurança.</q><small>Avaliação no Google</small></li><li><span class="estrelas" aria-hidden="true">★★★★★</span><q>Ela se esforça para garantir que os pacientes estejam bem informados sobre os procedimentos e os cuidados necessários após cada sessão.</q><small>Avaliação no Google</small></li><li><span class="estrelas" aria-hidden="true">★★★★★</span><q>Muito educada, esclarece todas as dúvidas e é pontual.</q><small>Avaliação no Google</small></li></ul>
       </div>
-      <p class="faixa-dica">Arraste para o lado para ver mais avaliações →</p>
-      <div class="closing-titulo"><svg class="icone-sec" viewBox="0 0 64 64" aria-hidden="true"><path d="M44 8l12 12-28 28-15 3 3-15z"/><path d="M38 14l12 12"/><path d="M8 56h48"/></svg>
-      <h2>Já foi atendido por mim? Sua avaliação faz diferença.</h2></div>
+      <h2>Já foi atendido por mim? Sua avaliação faz diferença.</h2>
       <div class="ctas">
         <a class="btn btn-solid" href="https://g.page/r/CZ8vb_q18XzHEAI/review" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9z"/></svg>Avaliar no Google</a>
         <a class="btn btn-solid" href="https://www.instagram.com/dra.izabellabrunoro" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg>Siga no Instagram</a>
@@ -453,31 +439,11 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 
 <a class="agendar-fixo" href="#atendimento">Agendar consulta</a>
 <script>
-/* rolagem suave só nos cliques do menu e dos botões internos; o foco do teclado vai na hora (07/11/2026) */
-document.addEventListener('click', function(e){
-  var a = e.target.closest && e.target.closest('a[href^="#"]');
-  if(!a) return;
-  var alvo = document.querySelector(a.getAttribute('href') === '#' ? 'body' : a.getAttribute('href'));
-  if(!alvo) return;
-  e.preventDefault();
-  var calmo = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  alvo.scrollIntoView({behavior: calmo ? 'auto' : 'smooth', block: 'start'});
-  history.pushState(null, '', a.getAttribute('href'));
-});
-</script>
-<script>
 /* some o botão fixo quando a parte de agendamento já está na tela */
 (function(){
-  /* e também enquanto os botões de agendar da abertura estão à vista (07/11/2026) */
-  var b = document.querySelector('.agendar-fixo'), alvos = [document.querySelector('.hero .ctas'), document.getElementById('atendimento'), document.querySelector('.closing .ctas')];
-  if(!b || !('IntersectionObserver' in window)) return;
-  var vis = new Map();
-  var io = new IntersectionObserver(function(es){
-    es.forEach(function(e){ vis.set(e.target, e.isIntersecting); });
-    var algum = false; vis.forEach(function(v){ if(v) algum = true; });
-    b.classList.toggle('some', algum);
-  }, {threshold:.15});
-  alvos.forEach(function(a){ if(a) io.observe(a); });
+  var b = document.querySelector('.agendar-fixo'), alvo = document.getElementById('atendimento');
+  if(!b || !alvo || !('IntersectionObserver' in window)) return;
+  new IntersectionObserver(function(e){ b.classList.toggle('some', e[0].isIntersecting); }, {threshold:.15}).observe(alvo);
 })();
 </script>
 
