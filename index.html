@@ -183,7 +183,15 @@ section{padding-block:clamp(64px,9vw,128px)}
 @media (max-width:540px){.tx{grid-template-columns:1fr}.tx article:nth-child(2n){padding-left:0;border-left:0}.tx article{padding-right:0}}
 
 /* Quote band */
-.band{background:var(--dark-band);color:var(--on-dark)}
+.band{background:var(--dark-band);color:var(--on-dark);position:relative;overflow:hidden;isolation:isolate}
+/* Segunda marca-d'água (15/11/2026): símbolo iB mono creme do kit (fundo escuro pede a creme), no espaço vazio
+   à direita da citação, cortado pela borda. Só nesta faixa e no Sobre mim; some no celular. */
+.band::before{content:"";position:absolute;z-index:-1;pointer-events:none;top:50%;right:clamp(-120px,-6vw,-40px);
+  height:118%;aspect-ratio:904/1160;transform:translateY(-50%);
+  background:url("marca/simbolo-mono-creme.svg") no-repeat center/contain;opacity:.06}
+@media (max-width:860px){.band::before{display:none}}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .band::before{opacity:.04}}
+:root[data-theme="dark"] .band::before{opacity:.04}
 /* Faixa só com a citação (15/11/2026): sem foto, para o site não repetir o retrato */
 .band .wrap{display:block}
 .band blockquote{margin:0;font-family:var(--display);font-size:clamp(1.9rem,1.4rem + 2.2vw,3.2rem);line-height:1.2;max-width:24ch}
