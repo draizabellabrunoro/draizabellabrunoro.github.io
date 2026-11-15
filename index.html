@@ -62,6 +62,7 @@
   --label:#7d6844; /* champanhe escuro do manual, para rótulos (contraste 4,6:1 no creme) */
   --line:#e2e0da;
   --muted:#5e6676;
+  --ink:#26324a; /* texto corrido (manual, cap. 14); o --muted fica só para apoio */
   --bg:var(--porcelain);
   --fg:var(--navy);
   --on-dark:#f6f5f2;
@@ -77,10 +78,10 @@
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --bg:#121926;--surface:#18213200;--fg:#ecebe6;--navy:#ecebe6;--navy-soft:#b9c6db;--sky:#8fa9cc;
-  --champagne:#cdb68e;--label:#cdb68e;--line:#2a3549;--muted:#a3abba;--on-dark:#ecebe6;--dark-band:#0c121c;--surface:#182132;color-scheme:dark}}
+  --champagne:#cdb68e;--label:#cdb68e;--line:#2a3549;--muted:#a3abba;--ink:#dcdbd5;--on-dark:#ecebe6;--dark-band:#0c121c;--surface:#182132;color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#121926;--fg:#ecebe6;--navy:#ecebe6;--navy-soft:#b9c6db;--sky:#8fa9cc;
-  --champagne:#cdb68e;--label:#cdb68e;--line:#2a3549;--muted:#a3abba;--on-dark:#ecebe6;--dark-band:#0c121c;--surface:#182132;color-scheme:dark}
+  --champagne:#cdb68e;--label:#cdb68e;--line:#2a3549;--muted:#a3abba;--ink:#dcdbd5;--on-dark:#ecebe6;--dark-band:#0c121c;--surface:#182132;color-scheme:dark}
 
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -123,7 +124,7 @@ nav.links a:hover{color:var(--fg)}
 .hero h1{font-size:var(--step-3)}
 .hero .byline{font-size:.94rem;font-weight:600;color:var(--muted);margin:0}
 .hero .lede{font-size:clamp(1.06rem,1rem + .5vw,1.28rem);max-width:46ch}
-.lede{font-size:var(--step-1);font-weight:400;color:var(--muted);max-width:34ch;line-height:1.5}
+.lede{font-size:var(--step-1);font-weight:400;color:var(--ink);max-width:34ch;line-height:1.5}
 .ctas{display:flex;flex-wrap:wrap;gap:12px}
 .creds{display:flex;flex-wrap:wrap;gap:8px 20px;padding-top:14px;border-top:1px solid var(--line);font-size:.86rem;color:var(--muted)}
 .creds span strong{color:var(--fg);font-weight:600}
@@ -153,7 +154,7 @@ section{padding-block:clamp(64px,9vw,128px)}
 .about .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(32px,6vw,96px);align-items:start}
 .about .frame{border-radius:4px;aspect-ratio:3/4}
 .about-text{display:flex;flex-direction:column;gap:22px;min-width:0;max-width:62ch}
-.about-text p{color:var(--muted)}
+.about-text p{color:var(--ink)}
 .about-text p.eyebrow{color:var(--label)}
 .about-text p.first{font-family:var(--display);font-size:var(--step-1);color:var(--fg);line-height:1.4}
 .values{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
@@ -167,13 +168,13 @@ section{padding-block:clamp(64px,9vw,128px)}
 .tx-intro .sec-head{margin-bottom:0;min-width:0}
 .tx-intro .frame{border-radius:4px;aspect-ratio:1045/1500;max-width:400px;justify-self:end}
 @media (max-width:860px){.tx-intro .frame{justify-self:start}}
-.tx-lede{color:var(--muted);max-width:52ch}
+.tx-lede{color:var(--ink);max-width:52ch}
 @media (max-width:860px){.tx-intro{grid-template-columns:1fr}}
 .tx{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
 .tx article{padding:32px 28px 36px 0;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:10px;min-width:0}
 .tx article:not(:nth-child(3n+1)){padding-left:28px;border-left:1px solid var(--line)}
 .tx h3{font-size:1.5rem}
-.tx p{color:var(--muted);font-size:.95rem}
+.tx p{color:var(--ink);font-size:.95rem}
 .tx .kind{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--label);font-weight:600}
 @media (max-width:860px){.tx{grid-template-columns:1fr 1fr}.tx article:not(:nth-child(3n+1)){padding-left:0;border-left:0}.tx article:nth-child(2n){padding-left:24px;border-left:1px solid var(--line)}}
 @media (max-width:540px){.tx{grid-template-columns:1fr}.tx article:nth-child(2n){padding-left:0;border-left:0}.tx article{padding-right:0}}
@@ -209,6 +210,9 @@ section{padding-block:clamp(64px,9vw,128px)}
 .closing .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:32px;border-top:1px solid var(--line);padding-top:clamp(48px,6vw,80px)}
 .closing h2{font-size:var(--step-2);max-width:18ch}
 .closing .ctas{justify-content:flex-start}
+.closing-copy{display:flex;flex-direction:column;gap:16px;min-width:0}
+.closing-links{font-size:.9rem;color:var(--muted)}
+.closing-links a{color:var(--fg);text-underline-offset:4px}
 footer{padding-block:32px 48px;font-size:.82rem;color:var(--muted)}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 
@@ -220,7 +224,10 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 .patient-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(18px,3vw,30px);margin-top:28px}
 .consult-step{border-top:1px solid var(--line);padding-top:16px}
 .consult-step h3{font-size:var(--step-1)}
-.consult-step p,.review-card p{color:var(--muted);margin:9px 0 0}
+.consult-step p{color:var(--ink);margin:9px 0 0}
+.step-n{display:block;font-family:var(--display);font-size:1.05rem;letter-spacing:.06em;color:var(--label);margin-bottom:6px;font-variant-numeric:lining-nums}
+/* Avaliações como citação de revista (15/11/2026) */
+.review-card p{margin:14px 0 0;font-family:var(--display);font-style:italic;font-size:clamp(1.2rem,1.05rem + .6vw,1.45rem);line-height:1.45;color:var(--navy)}
 .reviews-heading{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:12px}
 .reviews-heading a{text-underline-offset:4px}
 .review-card{margin:0;padding-top:16px;border-top:1px solid var(--line)}
@@ -232,7 +239,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 #duvidas summary::-webkit-details-marker{display:none}
 #duvidas summary::after{content:"+";color:var(--champagne);font-family:var(--body);font-weight:300;font-size:1.6em;line-height:1}
 #duvidas details[open] summary::after{content:"\2013"}
-#duvidas details p{margin:12px 0 0;color:var(--muted);max-width:70ch}
+#duvidas details p{margin:12px 0 0;color:var(--ink);max-width:70ch}
 /* Botão fixo de agendar no celular (06/11/2026) */
 .agendar-fixo{display:none}
 @media (max-width:760px){
@@ -288,9 +295,9 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
     <div class="wrap">
       <div class="sec-head"><h2 id="titulo-consulta">Como funciona a primeira consulta</h2></div>
       <div class="patient-grid">
-        <div class="consult-step"><h3>Conversa</h3><p>Quero entender o que trouxe você até aqui, conhecer sua rotina e ouvir suas dúvidas.</p></div>
-        <div class="consult-step"><h3>Exame clínico</h3><p>Avalio sua saúde bucal e explico o que observei durante o exame.</p></div>
-        <div class="consult-step"><h3>Plano de tratamento</h3><p>Conversamos sobre as opções para o seu caso e o que pode ser feito a seguir.</p></div>
+        <div class="consult-step"><span class="step-n" aria-hidden="true">01</span><h3>Conversa</h3><p>Quero entender o que trouxe você até aqui, conhecer sua rotina e ouvir suas dúvidas.</p></div>
+        <div class="consult-step"><span class="step-n" aria-hidden="true">02</span><h3>Exame clínico</h3><p>Avalio sua saúde bucal e explico o que observei durante o exame.</p></div>
+        <div class="consult-step"><span class="step-n" aria-hidden="true">03</span><h3>Plano de tratamento</h3><p>Conversamos sobre as opções para o seu caso e o que pode ser feito a seguir.</p></div>
       </div>
     </div>
   </section>
@@ -438,10 +445,13 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 
   <section class="closing">
     <div class="wrap">
-      <h2>Já foi atendido por mim? Sua avaliação faz diferença.</h2>
+      <div class="closing-copy">
+        <h2>Vamos conversar sobre o seu sorriso?</h2>
+        <p class="closing-links">Já foi atendido por mim? <a href="https://g.page/r/CZ8vb_q18XzHEAI/review" target="_blank" rel="noopener">Deixe sua avaliação no Google</a> · <a href="https://www.instagram.com/dra.izabellabrunoro" target="_blank" rel="noopener">Instagram</a></p>
+      </div>
       <div class="ctas">
-        <a class="btn btn-solid" href="https://g.page/r/CZ8vb_q18XzHEAI/review" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9z"/></svg>Avaliar no Google</a>
-        <a class="btn btn-solid" href="https://www.instagram.com/dra.izabellabrunoro" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg>Siga no Instagram</a>
+        <a class="btn btn-solid" href="https://wa.me/5527988348448?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20com%20a%20Dra.%20Izabella%20Brunoro" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#wa-icon"/></svg>Agendar em Vitória</a>
+        <a class="btn btn-solid" href="https://wa.me/5527995168307?text=Ol%C3%A1,%20tudo%20bem?%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20com%20a%20Dra.%20Izabella%20Brunoro" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#wa-icon"/></svg>Agendar em Vila Velha</a>
       </div>
     </div>
   </section>
@@ -456,11 +466,17 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 
 <a class="agendar-fixo" href="#atendimento">Agendar consulta</a>
 <script>
-/* some o botão fixo quando a parte de agendamento já está na tela */
+/* some o botão fixo quando a parte de agendamento ou o fecho (que já tem os botões) estão na tela */
 (function(){
-  var b = document.querySelector('.agendar-fixo'), alvo = document.getElementById('atendimento');
-  if(!b || !alvo || !('IntersectionObserver' in window)) return;
-  new IntersectionObserver(function(e){ b.classList.toggle('some', e[0].isIntersecting); }, {threshold:.15}).observe(alvo);
+  var b = document.querySelector('.agendar-fixo');
+  var alvos = [document.getElementById('atendimento'), document.querySelector('.closing')].filter(Boolean);
+  if(!b || !alvos.length || !('IntersectionObserver' in window)) return;
+  var visiveis = new Set();
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ e.isIntersecting ? visiveis.add(e.target) : visiveis.delete(e.target); });
+    b.classList.toggle('some', visiveis.size > 0);
+  }, {threshold:.15});
+  alvos.forEach(function(a){ io.observe(a); });
 })();
 </script>
 
