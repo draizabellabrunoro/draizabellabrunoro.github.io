@@ -178,12 +178,11 @@ section{padding-block:clamp(64px,9vw,128px)}
 
 /* Quote band */
 .band{background:var(--dark-band);color:var(--on-dark)}
-.band .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,88px);align-items:center}
-.band blockquote{margin:0;font-family:var(--display);font-size:var(--step-2);line-height:1.25}
+/* Faixa só com a citação (15/11/2026): sem foto, para o site não repetir o retrato */
+.band .wrap{display:block}
+.band blockquote{margin:0;font-family:var(--display);font-size:clamp(1.9rem,1.4rem + 2.2vw,3.2rem);line-height:1.2;max-width:24ch}
 .band blockquote em{color:var(--champagne)}
-.band .frame{border-radius:4px;aspect-ratio:1/1;max-width:440px;justify-self:end}
 .band p.cap{margin-top:24px;font-size:.88rem;letter-spacing:.14em;text-transform:uppercase;opacity:.7}
-@media (max-width:860px){.band .wrap{grid-template-columns:1fr}.band .frame{justify-self:start}}
 
 /* Locations */
 .locs{display:grid;grid-template-columns:1fr 1fr;gap:24px}
@@ -358,9 +357,6 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
         <blockquote>Mais do que tratamentos, quero oferecer <em>experiências positivas</em> e personalizadas para cada paciente.</blockquote>
         <p class="cap">Dra. Izabella Brunoro</p>
       </div>
-      <figure class="frame" style="margin:0">
-        <img src="retrato.jpg" alt="Dra. Izabella Brunoro lendo, sentada em uma poltrona de couro" loading="lazy" width="1048" height="1402" style="object-position:50% 30%">
-      </figure>
     </div>
   </section>
 
