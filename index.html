@@ -95,11 +95,13 @@ p{margin:0}
 /* Header */
 header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
-.mono{width:48px;height:48px;border:1px solid var(--sky);border-radius:50%;display:grid;place-items:center;background:#f2efe7;flex:none}
-.mono img{width:auto;height:34px;display:block;margin-left:2px}
-.brand b{font-family:var(--display);font-weight:500;font-size:1.05rem;letter-spacing:.08em;text-transform:uppercase;display:block;line-height:1.1}
-.brand small{display:block;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+/* Logo do kit de marca (15/11/2026): horizontal com CRO, versão principal (negativa no tema escuro).
+   O PNG já traz a área de proteção transparente (165 px em 2400); a margem negativa recolhe essa folga
+   sem encostar nada na marca: a largura útil fica em 248 px (mínimo do manual: 240 px). */
+.brand{display:flex;align-items:center;text-decoration:none;flex:none}
+.brand picture{display:block;line-height:0}
+.brand img{display:block;width:288px;height:auto;margin:-20px}
+@media (max-width:440px){.brand img{width:278px;margin:-19px}}
 nav.links{display:flex;gap:28px;font-size:.88rem}
 nav.links a{text-decoration:none;color:var(--muted)}
 nav.links a:hover{color:var(--fg)}
@@ -137,7 +139,16 @@ section{padding-block:clamp(64px,9vw,128px)}
 .sec-head h2{font-size:var(--step-2)}
 
 /* About */
-.about{background:var(--surface);border-block:1px solid var(--line)}
+.about{background:var(--surface);border-block:1px solid var(--line);position:relative;overflow:hidden;isolation:isolate}
+/* Marca-d'água (15/11/2026): símbolo iB mono marinho do kit, inteiro e sem recolorir, ampliado e bem suave
+   ao lado do retrato, com o lado do B cortado pela borda direita da seção. Fica atrás da foto e do texto. */
+.about::before{content:"";position:absolute;z-index:-1;pointer-events:none;
+  top:50%;right:clamp(-150px,-8vw,-60px);height:min(86%,760px);aspect-ratio:904/1160;transform:translateY(-50%);
+  background:url("marca/simbolo-mono-marinho.svg") no-repeat center/contain;opacity:.07}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .about::before{background-image:url("marca/simbolo-mono-creme.svg");opacity:.05}}
+:root[data-theme="dark"] .about::before{background-image:url("marca/simbolo-mono-creme.svg");opacity:.05}
+@media (max-width:860px){.about::before{top:clamp(64px,9vw,128px);transform:none;height:min(480px,62vw);right:-14vw}}
+@media (max-width:600px){.about::before{display:none}}
 .about .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(32px,6vw,96px);align-items:start}
 .about .frame{border-radius:4px;aspect-ratio:3/4}
 .about-text{display:flex;flex-direction:column;gap:22px;min-width:0;max-width:62ch}
@@ -234,8 +245,10 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 <header class="top">
   <div class="wrap">
     <a class="brand" href="#inicio" aria-label="Início">
-      <span class="mono" aria-hidden="true"><img src="logo.png" alt="" width="121" height="157"></span>
-      <span><b>Izabella Brunoro</b><small>Cirurgiã-dentista</small></span>
+      <picture>
+        <source srcset="marca/horizontal-negativo.png" media="(prefers-color-scheme: dark)">
+        <img src="marca/horizontal-principal.png" alt="Izabella Brunoro, cirurgiã-dentista, CRO-ES 12337" width="2400" height="935">
+      </picture>
     </a>
     <nav class="links" aria-label="Seções">
       <a href="#sobre">Sobre</a>
