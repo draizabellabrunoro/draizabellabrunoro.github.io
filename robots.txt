@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://draizabellabrunoro.github.io/sitemap.xml
