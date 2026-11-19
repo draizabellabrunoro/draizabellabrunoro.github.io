@@ -54,7 +54,8 @@
         {
           "@id": "https://draizabellabrunoro.github.io/#vila-velha"
         }
-      ]
+      ],
+      "telephone": "+55 27 98841-4358"
     },
     {
       "@type": "Dentist",
@@ -760,10 +761,15 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
   var origem = (q.get("origem") || q.get("utm_source") || "").toLowerCase();
   var ref = document.referrer || "";
   if(!origem && /instagram\.com/i.test(ref)) origem = "instagram";
-  if(origem !== "instagram" && origem !== "guia") return;
-  var texto = origem === "guia"
-    ? "Olá, tudo bem? Recebi o guia da Dra. Izabella Brunoro pelo Instagram e gostaria de agendar um horário."
-    : "Olá, tudo bem? Vi a Dra. Izabella Brunoro no Instagram e gostaria de agendar um horário.";
+  /* 19/11/2026: Google (link do Perfil do Google com ?origem=google) e Doctoralia (?origem=doctoralia) */
+  var textos = {
+    instagram: "Olá, tudo bem? Vi a Dra. Izabella Brunoro no Instagram e gostaria de agendar um horário.",
+    guia: "Olá, tudo bem? Recebi o guia da Dra. Izabella Brunoro pelo Instagram e gostaria de agendar um horário.",
+    google: "Olá, tudo bem? Encontrei a Dra. Izabella Brunoro no Google e gostaria de agendar um horário.",
+    doctoralia: "Olá, tudo bem? Encontrei a Dra. Izabella Brunoro na Doctoralia e gostaria de agendar um horário."
+  };
+  var texto = textos[origem];
+  if(!texto) return;
   document.querySelectorAll('a[href*="wa.me/"]').forEach(function(a){
     try { var u = new URL(a.href); u.searchParams.set("text", texto); a.href = u.toString(); } catch(e){}
   });
